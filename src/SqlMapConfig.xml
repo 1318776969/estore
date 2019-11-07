@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="db.properties"></properties>
+	<!-- 插件（放在environments标签上方即可） -->
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageHelper">
+			<property name="dialect" value="mysql"/>
+			<property name="rowBoundsWithCount" value="true"/>
+		</plugin>
+	</plugins>
+	<!-- 配置环境，连接需要的基本参数 -->
+	<environments default="development">
+		<environment id="development">
+			<!-- 使用jdbc管理事务 -->
+			<transactionManager type="JDBC"></transactionManager>
+			<!-- 配置数据源(配置连接) -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}"/>
+				<property name="url" value="${jdbc.url}"/>
+				<property name="username" value="${jdbc.username}"/>
+				<property name="password" value="${jdbc.password}"/>
+			</dataSource>
+			
+		</environment>
+	</environments>
+	
+	<mappers>
+		<package name="com.czxy.product.dao"/>
+		<package name="com.czxy.user.dao"/>
+	</mappers>
+	
+</configuration>

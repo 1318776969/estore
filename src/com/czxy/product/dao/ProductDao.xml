@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+	namespace必须为对应dao接口的全类名
+ -->
+<mapper namespace="com.czxy.product.dao.ProductDao">
+	<!--<select id="selectAll" resultType="com.czxy.demo1.domain.User">
+		select * from user
+	</select> -->
+</mapper>
